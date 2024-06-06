@@ -4,8 +4,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\API\AuthController;
 use App\Http\Controllers\API\AdminController;
-use App\Http\Controllers\API\ContentController;
 use App\Http\Controllers\API\UserController;
+use App\Http\Controllers\API\ContentWriterController;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,8 +29,11 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::middleware('role:admin|superadmin')->group(function () {
         Route::apiResource('admin', AdminController::class);
     });
-    Route::middleware('role:content-manager')->group(function () {
-        Route::apiResource('content', ContentController::class);
+    Route::middleware(['auth:sanctum', 'is_content_writer'])->group(function () {
+        Route::apiResource('content-writers', ContentWriterController::class);
     });
+
     Route::apiResource('user', UserController::class)->middleware('role:user');
 });
+
+// Content Writer Routes
