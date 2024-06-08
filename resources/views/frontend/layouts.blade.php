@@ -20,7 +20,13 @@
         integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script type="text/javascript" src="{{ asset('src/js/theme-appearance.js') }}"></script>
+    <link rel="stylesheet" href="https://unpkg.com/bs-brain@2.0.4/components/services/service-6/assets/css/service-6.css">
 
+    <style>
+        .link-dark {
+            text-decoration: none;
+        }
+    </style>
     @yield('style_css')
 
 </head>
@@ -746,41 +752,13 @@
 
     </main>
     <footer id="masterFooter" class="bg-light mt-auto d-print-none">
-        <div class="container-xxl">
-            <div class="d-flex justify-content-between align-items-baseline py-6">
-
-                <div class="d-flex gap-2">
-                    <a class="link-dark" href="https://twitter.com/polygonscan" rel="nofollow noopener"
-                        target="_blank">
-                        <i class="fab fa-x-twitter me-0.5"></i> (Twitter)
-                    </a>
-                </div>
-
-                <a class="link-dark" href="#">
-                    <i class="far fa-arrow-up-to-line me-1"></i>Back to Top
-                </a>
-            </div>
-            <hr class="my-0">
+        <div class="container">
 
             <div class="row justify-content-md-between py-8 py-lg-10">
                 <div class="col-lg-4 pe-xl-16 mb-4 mb-lg-0">
-                    <div class="d-flex align-items-center mb-3">
-                        <img class="me-2" width="28" data-img-theme="light"
-                            src="assets/poly/images/svg/logos/chain-light2a89.svg?v=24.5.3.0"
-                            alt="Polygon PoS Chain Logo">
-                        <img class="me-2" width="28" data-img-theme="dim"
-                            src="assets/poly/images/svg/logos/chain-dim2a89.svg?v=24.5.3.0"
-                            alt="Polygon PoS Chain Logo">
-                        <img class="me-2" width="28" data-img-theme="dark"
-                            src="assets/poly/images/svg/logos/chain-dark2a89.svg?v=24.5.3.0"
-                            alt="Polygon PoS Chain Logo">
-                        <span class="fs-5">Powered by Polygon PoS Chain</span>
-                    </div>
-                    <p class="fs-sm">PolygonScan is a Block Explorer and Analytics Platform for Polygon PoS Chain.</p>
-                    <button type="button" class="btn btn-sm btn-secondary" onclick="addNetwork('web3');">
-                        <img class="me-1" width="18" src="images/svg/brands/metamask.svg" alt="Metamask"> Add
-                        Polygon Network
-                    </button>
+
+                    <p class="fs-sm"></p>
+
                 </div>
                 <div class="col-6 col-md-4 col-lg mb-10 mb-md-0">
                     <h4 class="h6 mb-3">Company</h4>
@@ -791,7 +769,8 @@
                         <li><a class="link-dark" href="terms.html">Terms</a> & <a class="link-dark"
                                 href="privacyPolicy.html">Privacy</a></li>
                         <li><a class="link-dark" href="https://etherscan.io/bugbounty" target="_blank">Bug Bounty</a>
-                            <i class="far fa-arrow-up-right-from-square text-muted ms-1"></i></li>
+                            <i class="far fa-arrow-up-right-from-square text-muted ms-1"></i>
+                        </li>
                     </ul>
 
                 </div>
@@ -830,19 +809,16 @@
                 <div class="row justify-content-between align-items-center fs-sm">
                     <div class="col-md mb-2 mb-md-0">
                         <p class="mb-0">
-                            PolygonScan © 2024 (POLY-B1)
+                            Artixcore © 2024
                             <span class="mx-1">|</span>
-                            ⛏ Built by Team <a href="https://etherscan.io/"
-                                target="_blank"><strong>Etherscan</strong><i
-                                    class="far fa-arrow-up-right-from-square text-muted ms-1"></i></a>
+                            Built by Team <a style="text-decoration:none;" href="https://artixcore.com/"
+                                target="_blank"><strong>Artixcore</strong></a>
                         </p>
                     </div>
                     <div class="col-md text-md-end">
                         <p class="mb-0">
-                            Donations: <a class="me-1"
-                                href="address/0x71c7656ec7ab88b098defb751b7401b5f6d8976f.html"><span
-                                    id="spanDonateAddress" runat="server">0x71c765...d8976f</span></a> <i
-                                class="fas fa-heart text-danger"></i>
+                            <a class="me-1" href=""><span id="spanDonateAddress"
+                                    runat="server">0</span></a>
                         </p>
                     </div>
                 </div>
