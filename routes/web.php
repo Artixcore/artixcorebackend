@@ -14,6 +14,8 @@ use App\Http\Controllers\IndexHeaderController;
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\FrontendMenuController;
 use App\Http\Controllers\FrontendPageController;
+use App\Http\Controllers\FaqController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -47,6 +49,8 @@ Route::fallback(function () {
 Route::get('/header', [FrontendMenuController::class, 'showHeaderMenu']);
 
 Auth::routes();
+
+Route::resource('faqs', FaqController::class);
 
 Route::resource('portfolios', PortfolioController::class);
 
