@@ -23,6 +23,7 @@
                     <li class="nav-item"> <a class="nav-link" href="{{route('pages.index')}}">Pages</a></li>
                     <li class="nav-item"> <a class="nav-link" href="{{route('uploads.index')}}">Features</a></li>
                     <li class="nav-item"> <a class="nav-link" href="{{route('social_links.index')}}">Socials</a></li>
+                    <li class="nav-item"> <a class="nav-link" href="{{route('testimonials.index')}}">Testimonials</a></li>
                 </ul>
             </div>
         </li>
@@ -35,8 +36,7 @@
             </a>
             <div class="collapse" id="form-elements">
                 <ul class="nav flex-column sub-menu">
-                    <li class="nav-item"><a class="nav-link" href="pages/forms/basic_elements.html">Basic
-                            Elements</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{route('services.index')}}">Service</a></li>
                 </ul>
             </div>
         </li>

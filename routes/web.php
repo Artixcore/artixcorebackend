@@ -6,7 +6,10 @@ use App\Http\Controllers\PageController;
 use App\Http\Controllers\MenuController;
 use App\Http\Controllers\UploadController;
 use App\Http\Controllers\SettingController;
+use App\Http\Controllers\ServiceController;
+use App\Http\Controllers\PortfolioController;
 use App\Http\Controllers\SocialLinkController;
+use App\Http\Controllers\TestimonialController;
 use App\Http\Controllers\IndexHeaderController;
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\FrontendMenuController;
@@ -40,9 +43,16 @@ Route::fallback(function () {
 
 
 
+
 Route::get('/header', [FrontendMenuController::class, 'showHeaderMenu']);
 
 Auth::routes();
+
+Route::resource('portfolios', PortfolioController::class);
+
+Route::resource('testimonials', TestimonialController::class);
+
+Route::resource('services', ServiceController::class);
 
 Route::get('admins', [AdminController::class,'index'])->name('admins');
 
