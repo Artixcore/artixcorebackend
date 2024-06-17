@@ -27036,7 +27036,6 @@ pre {
     --bs-main-content-linear-gradient-to: 246, 247, 248;
     flex-grow: 1;
     min-height: 30rem;
-    background-image: linear-gradient(var(--bs-main-content-linear-gradient-from) 0, rgba(var(--bs-main-content-linear-gradient-to), 0) 85rem)
 }
 
 .header {
@@ -27053,23 +27052,19 @@ pre {
 }
 
 .navbar-nav .nav-link {
-    font-size: .9062rem
+    font-size: 16px;
 }
 
-@media (min-width:992px) {
-    .navbar-nav .nav-link {
-        padding-block: 1rem
-    }
-}
+
 
 .nav-sm.nav-pills .nav-link {
     padding: .25rem .5rem;
-    font-size: .75rem;
+    font-size: 16px;
     border-radius: .375rem
 }
 
 .navbar-nav .dropdown-item {
-    font-size: .8203125rem
+    font-size: 16px;
 }
 
 .navbar-nav .dropdown-menu-border {

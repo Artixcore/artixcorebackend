@@ -10,6 +10,9 @@
     @yield('meta')
     {{-- <title>Document</title> --}}
     @yield('title')
+
+    <link rel="icon" type="image/x-icon" href="{{asset('icon.png')}}">
+
     <!-- Vendor CSS Files -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
         integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
@@ -20,8 +23,12 @@
         integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script type="text/javascript" src="{{ asset('src/js/theme-appearance.js') }}"></script>
-    <link rel="stylesheet" href="https://unpkg.com/bs-brain@2.0.4/components/services/service-6/assets/css/service-6.css">
+    <link href="{{ asset('src/vendor/aos/aos.css" rel="stylesheet') }}">
+    <link href="{{ asset('src/vendor/glightbox/css/glightbox.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('src/vendor/swiper/swiper-bundle.min.css') }}" rel="stylesheet">
 
+    <!-- Main CSS File -->
+    <link href="{{ asset('src/css/main.css') }}" rel="stylesheet">
     <style>
         .link-dark {
             text-decoration: none;
@@ -31,40 +38,30 @@
 
 </head>
 
-<body id="body" class="d-flex flex-column min-vh-100">
+<body class="index-page">
 
-    <section id="masterTopBar" class="bg-white border-bottom py-2 d-print-none">
-        <div class="container d-flex align-items-center justify-content-between">
-            <div id="ethPrice" class="d-none d-md-flex align-items-center gap-4 w-100 fs-sm">
-                <div class="text-muted"><span class="text-muted">MATIC Price:</span> <a
-                        href="chart/maticprice.html">$0.725206</a><span data-bs-toggle="tooltip" data-bs-placement="top"
-                        title="Changes in the last 24 hours"><span class="text-success"> (+1.13%)</span></span></div>
-                <div class="text-muted d-none d-lg-block"><i class="fad fa-gas-pump me-1"></i> Gas: <span
-                        id="spanGasTooltip" data-bs-toggle="tooltip" data-bs-html="true"><a href="gastracker.html"><span
-                                class="gasPricePlaceHolder">30</span> GWei</a></span></div>
-            </div>
-            <div class="d-flex justify-content-end align-items-center">
-                <div id="frmMaster" class="search-panel-container flex-grow-1 position-relative">
-                    <form action="" method="GET" autocomplete="off">
-
-                        <input type="text" class="form-control bg-light" autocomplete="off" spellcheck="false"
-                            id="search-panel" name="q" placeholder="Search" />
-
-
-                    </form>
-                </div>
-
-
-            </div>
+    <div class="topbar d-flex align-items-center">
+        <div class="container d-flex justify-content-center justify-content-md-between">
+          <div class="contact-info d-flex align-items-center">
+            <i class="bi bi-envelope d-flex align-items-center"><a href="mailto:contact@example.com">contact@example.com</a></i>
+            <i class="bi bi-phone d-flex align-items-center ms-4"><span>+1 5589 55488 55</span></i>
+          </div>
+          <div class="social-links d-none d-md-flex align-items-center">
+            <a href="#" class="twitter"><i class="bi bi-twitter-x"></i></a>
+            <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
+            <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
+            <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
+          </div>
         </div>
-    </section>
+      </div><!-- End Top Bar -->
+
 
 
     <header id="masterHeader" class="header sticky-top bg-white border-bottom d-print-none">
         <nav class="navbar navbar-expand-lg navbar-light py-3 py-lg-0">
             <div class="container position-relative">
-                <a class="navbar-brand" href="{{ url('/') }}" target="_parent" aria-label="PolygonScan">
-                    Artixcore
+                <a class="navbar-brand" style="color:black;" href="{{ url('/') }}" target="_parent" aria-label="PolygonScan">
+                 <img src="{{asset('icon.png')}}" alt="" style="height: 30px; width:30px;">
                 </a>
                 <div class="d-flex align-items-center gap-4">
                     <a class="link-dark d-block d-lg-none" href="login.html">
@@ -734,7 +731,7 @@
                             <span class="text-secondary">|</span>
                         </li>
                         <li class="nav-item d-none d-lg-block">
-                            <a class="nav-link" href="">
+                            <a class="nav-link" href="{{route('login')}}">
                                 <i class="far fa-user-circle me-1"></i> Sign In
                             </a>
                         </li>
@@ -745,7 +742,7 @@
     </header>
 
 
-    <main id="content" class="main-content" role="main">
+    <main class="main">
 
         @yield('content')
 
@@ -853,7 +850,15 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
     </script>
-    <script src="{{ asset('src/js/app.js') }}"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js" integrity="sha512-7Pi/otdlbbCR+LnW+F7PwFcSDJOuUJB3OxtEHbg4vSMvzvJjde4Po1v4BR9Gdc9aXNUNFVUY+SK51wWT8WF0Gg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="{{ asset('src/vendor/aos/aos.js') }}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/glightbox/3.3.0/js/glightbox.min.js" integrity="sha512-RBWI5Qf647bcVhqbEnRoL4KuUT+Liz+oG5jtF+HP05Oa5088M9G0GxG0uoHR9cyq35VbjahcI+Hd1xwY8E1/Kg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.min.js" integrity="sha512-Ysw1DcK1P+uYLqprEAzNQJP+J4hTx4t/3X2nbVwszao8wD+9afLjBQYjz7Uk4ADP+Er++mJoScI42ueGtQOzEA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="{{ asset('src/vendor/imagesloaded/imagesloaded.pkgd.min.js') }}"></script>
+    <script src="{{ asset('src/vendor/isotope-layout/isotope.pkgd.min.js') }}"></script>
+    <!-- Main JS File -->
+    <script src="{{ asset('src/js/main.js') }}"></script>
+
 </body>
 
 </html>

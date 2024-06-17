@@ -1,148 +1,476 @@
 @extends('frontend.layouts')
 @section('style_css')
-    <style>
-        .card-custom {
-            transition: all 0.3s ease;
-        }
-
-        .card-custom:hover {
-            background-color: #f8f9fa;
-            /* Bootstrap's neutral-50 equivalent */
-        }
-
-        .rounded-3xl {
-            border-radius: 1.5rem;
-            /* Custom rounded class equivalent to rounded-3xl */
-        }
-
-        .custom-title {
-            font-size: 1.75rem;
-            /* Adjust as needed */
-            font-weight: 600;
-            /* Semi-bold */
-            color: #212529;
-            /* text-dark equivalent */
-        }
-
-        .text-body-secondary {
-            color: #6c757d;
-            /* text-secondary equivalent */
-        }
-    </style>
 @endsection
 @section('title')
     <title>Welcome to Artixcore</title>
 @endsection
 
-{{-- <div class="col-md-4">
-    <div class="card card-custom rounded-3xl  shadow-sm">
-        <div class="card-body">
-
-
-            <p class="text-dark">Skip the bank, borrow from those you trust
-            </p>
-            <p class="mt-3 text-body-secondary">FamilyFund is a crowdfunding platform for friends and
-                family. Allowing users to take personal loans from their network without a traditional
-                financial institution.</p>
-        </div>
-    </div>
-</div> --}}
 
 @section('content')
-    <div class="container position-relative aos-init aos-animate" data-aos="fade-up" data-aos-delay="100">
-        <div class="row gy-5 justify-content-between">
-            <div class="col-lg-6 order-2 order-lg-1 d-flex flex-column justify-content-center">
-                <h2><span>Welcome to </span><span class="accent">Impact</span></h2>
-                <p>Sed autem laudantium dolores. Voluptatem itaque ea consequatur eveniet. Eum quas beatae cumque eum
-                    quaerat.</p>
-                <div class="d-flex">
-                    <a href="#about" class="btn-get-started">Get Started</a>
-                    <a href="https://www.youtube.com/watch?v=LXb3EKWsInQ"
-                        class="glightbox btn-watch-video d-flex align-items-center"><i
-                            class="bi bi-play-circle"></i><span>Watch Video</span></a>
-                </div>
-            </div>
-            <div class="col-lg-5 order-1 order-lg-2">
-                <img src="assets/img/hero-img.svg" class="img-fluid" alt="">
-            </div>
-        </div>
-    </div>
+    <!-- Hero Section -->
+    <!-- Hero Section -->
+    @include('frontend.Home.Header')
 
-    <section class="container pt-5 pb-12">
+    {{-- @include('frontend.Home.Client') --}}
 
-        <div id="ContentPlaceHolder1_divStats" class="row g-4 mb-4">
-            <!-- Service 6 - Bootstrap Brain Component -->
-            <section class="bsb-service-6 py-5 py-xl-8">
-                <div class="container">
-                    <div class="row justify-content-md-center">
-                        <div class="col-12 col-md-10 col-lg-8 col-xl-7">
-                            <h3 class="fs-6 mb-2 text-secondary text-center text-uppercase">What We Do?</h3>
-                            <h2 class="display-5 mb-4 mb-md-5 text-center">We are giving you perfect solutions with our
-                                proficient services.</h2>
-                            <hr class="w-50 mx-auto mb-5 mb-xl-9 border-dark-subtle">
+    @include('frontend.Home.About')
+
+    @include('frontend.Home.Service')
+
+    <!-- Testimonials Section -->
+    @include('frontend.Home.Testimonial')
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="portfolio section">
+
+        <!-- Section Title -->
+        <div class="container section-title" data-aos="fade-up">
+            <h2>Portfolio</h2>
+            <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
+        </div><!-- End Section Title -->
+
+        <div class="container">
+
+            <div class="isotope-layout" data-default-filter="*" data-layout="masonry" data-sort="original-order">
+
+                <ul class="portfolio-filters isotope-filters" data-aos="fade-up" data-aos-delay="100">
+                    <li data-filter="*" class="filter-active">All</li>
+                    <li data-filter=".filter-app">App</li>
+                    <li data-filter=".filter-product">Product</li>
+                    <li data-filter=".filter-branding">Branding</li>
+                    <li data-filter=".filter-books">Books</li>
+                </ul><!-- End Portfolio Filters -->
+
+                <div class="row gy-4 isotope-container" data-aos="fade-up" data-aos-delay="200">
+
+                    <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
+                        <div class="portfolio-content h-100">
+                            <a href="assets/img/portfolio/app-1.jpg" data-gallery="portfolio-gallery-app"
+                                class="glightbox"><img src="assets/img/portfolio/app-1.jpg" class="img-fluid"
+                                    alt=""></a>
+                            <div class="portfolio-info">
+                                <h4><a href="portfolio-details.html" title="More Details">App 1</a></h4>
+                                <p>Lorem ipsum, dolor sit amet consectetur</p>
+                            </div>
                         </div>
+                    </div><!-- End Portfolio Item -->
+
+                    <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
+                        <div class="portfolio-content h-100">
+                            <a href="assets/img/portfolio/product-1.jpg" data-gallery="portfolio-gallery-app"
+                                class="glightbox"><img src="assets/img/portfolio/product-1.jpg" class="img-fluid"
+                                    alt=""></a>
+                            <div class="portfolio-info">
+                                <h4><a href="portfolio-details.html" title="More Details">Product 1</a></h4>
+                                <p>Lorem ipsum, dolor sit amet consectetur</p>
+                            </div>
+                        </div>
+                    </div><!-- End Portfolio Item -->
+
+                    <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
+                        <div class="portfolio-content h-100">
+                            <a href="assets/img/portfolio/branding-1.jpg" data-gallery="portfolio-gallery-app"
+                                class="glightbox"><img src="assets/img/portfolio/branding-1.jpg" class="img-fluid"
+                                    alt=""></a>
+                            <div class="portfolio-info">
+                                <h4><a href="portfolio-details.html" title="More Details">Branding 1</a></h4>
+                                <p>Lorem ipsum, dolor sit amet consectetur</p>
+                            </div>
+                        </div>
+                    </div><!-- End Portfolio Item -->
+
+                    <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-books">
+                        <div class="portfolio-content h-100">
+                            <a href="assets/img/portfolio/books-1.jpg" data-gallery="portfolio-gallery-app"
+                                class="glightbox"><img src="assets/img/portfolio/books-1.jpg" class="img-fluid"
+                                    alt=""></a>
+                            <div class="portfolio-info">
+                                <h4><a href="portfolio-details.html" title="More Details">Books 1</a></h4>
+                                <p>Lorem ipsum, dolor sit amet consectetur</p>
+                            </div>
+                        </div>
+                    </div><!-- End Portfolio Item -->
+
+                    <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
+                        <div class="portfolio-content h-100">
+                            <a href="assets/img/portfolio/app-2.jpg" data-gallery="portfolio-gallery-app"
+                                class="glightbox"><img src="assets/img/portfolio/app-2.jpg" class="img-fluid"
+                                    alt=""></a>
+                            <div class="portfolio-info">
+                                <h4><a href="portfolio-details.html" title="More Details">App 2</a></h4>
+                                <p>Lorem ipsum, dolor sit amet consectetur</p>
+                            </div>
+                        </div>
+                    </div><!-- End Portfolio Item -->
+
+                    <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
+                        <div class="portfolio-content h-100">
+                            <a href="assets/img/portfolio/product-2.jpg" data-gallery="portfolio-gallery-app"
+                                class="glightbox"><img src="assets/img/portfolio/product-2.jpg" class="img-fluid"
+                                    alt=""></a>
+                            <div class="portfolio-info">
+                                <h4><a href="portfolio-details.html" title="More Details">Product 2</a></h4>
+                                <p>Lorem ipsum, dolor sit amet consectetur</p>
+                            </div>
+                        </div>
+                    </div><!-- End Portfolio Item -->
+
+                    <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
+                        <div class="portfolio-content h-100">
+                            <a href="assets/img/portfolio/branding-2.jpg" data-gallery="portfolio-gallery-app"
+                                class="glightbox"><img src="assets/img/portfolio/branding-2.jpg" class="img-fluid"
+                                    alt=""></a>
+                            <div class="portfolio-info">
+                                <h4><a href="portfolio-details.html" title="More Details">Branding 2</a></h4>
+                                <p>Lorem ipsum, dolor sit amet consectetur</p>
+                            </div>
+                        </div>
+                    </div><!-- End Portfolio Item -->
+
+                    <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-books">
+                        <div class="portfolio-content h-100">
+                            <a href="assets/img/portfolio/books-2.jpg" data-gallery="portfolio-gallery-app"
+                                class="glightbox"><img src="assets/img/portfolio/books-2.jpg" class="img-fluid"
+                                    alt=""></a>
+                            <div class="portfolio-info">
+                                <h4><a href="portfolio-details.html" title="More Details">Books 2</a></h4>
+                                <p>Lorem ipsum, dolor sit amet consectetur</p>
+                            </div>
+                        </div>
+                    </div><!-- End Portfolio Item -->
+
+                    <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
+                        <div class="portfolio-content h-100">
+                            <a href="assets/img/portfolio/app-3.jpg" data-gallery="portfolio-gallery-app"
+                                class="glightbox"><img src="assets/img/portfolio/app-3.jpg" class="img-fluid"
+                                    alt=""></a>
+                            <div class="portfolio-info">
+                                <h4><a href="portfolio-details.html" title="More Details">App 3</a></h4>
+                                <p>Lorem ipsum, dolor sit amet consectetur</p>
+                            </div>
+                        </div>
+                    </div><!-- End Portfolio Item -->
+
+                    <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
+                        <div class="portfolio-content h-100">
+                            <a href="assets/img/portfolio/product-3.jpg" data-gallery="portfolio-gallery-app"
+                                class="glightbox"><img src="assets/img/portfolio/product-3.jpg" class="img-fluid"
+                                    alt=""></a>
+                            <div class="portfolio-info">
+                                <h4><a href="portfolio-details.html" title="More Details">Product 3</a></h4>
+                                <p>Lorem ipsum, dolor sit amet consectetur</p>
+                            </div>
+                        </div>
+                    </div><!-- End Portfolio Item -->
+
+                    <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
+                        <div class="portfolio-content h-100">
+                            <a href="assets/img/portfolio/branding-3.jpg" data-gallery="portfolio-gallery-app"
+                                class="glightbox"><img src="assets/img/portfolio/branding-3.jpg" class="img-fluid"
+                                    alt=""></a>
+                            <div class="portfolio-info">
+                                <h4><a href="portfolio-details.html" title="More Details">Branding 3</a></h4>
+                                <p>Lorem ipsum, dolor sit amet consectetur</p>
+                            </div>
+                        </div>
+                    </div><!-- End Portfolio Item -->
+
+                    <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-books">
+                        <div class="portfolio-content h-100">
+                            <a href="assets/img/portfolio/books-3.jpg" data-gallery="portfolio-gallery-app"
+                                class="glightbox"><img src="assets/img/portfolio/books-3.jpg" class="img-fluid"
+                                    alt=""></a>
+                            <div class="portfolio-info">
+                                <h4><a href="portfolio-details.html" title="More Details">Books 3</a></h4>
+                                <p>Lorem ipsum, dolor sit amet consectetur</p>
+                            </div>
+                        </div>
+                    </div><!-- End Portfolio Item -->
+
+                </div><!-- End Portfolio Container -->
+
+            </div>
+
+        </div>
+
+    </section><!-- /Portfolio Section -->
+
+
+    <!-- Faq Section -->
+    <section id="faq" class="faq section">
+
+        <div class="container">
+
+            <div class="row gy-4">
+
+                <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="content px-xl-5">
+                        <h3><span>Frequently Asked </span><strong>Questions</strong></h3>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                            labore et dolore magna aliqua. Duis aute irure dolor in reprehenderit
+                        </p>
                     </div>
                 </div>
 
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-4">
-                            <div class="card bg-transparent border-default rounded-0">
-                                <div class="card-body">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-hdd text-default mb-4" viewBox="0 0 16 16">
-                                        <path d="M4.5 11a.5.5 0 1 0 0-1 .5.5 0 0 0 0 1zM3 10.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0z" />
-                                        <path d="M16 11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V9.51c0-.418.105-.83.305-1.197l2.472-4.531A1.5 1.5 0 0 1 4.094 3h7.812a1.5 1.5 0 0 1 1.317.782l2.472 4.53c.2.368.305.78.305 1.198V11zM3.655 4.26 1.592 8.043C1.724 8.014 1.86 8 2 8h12c.14 0 .276.014.408.042L12.345 4.26a.5.5 0 0 0-.439-.26H4.094a.5.5 0 0 0-.44.26zM1 10v1a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-1a1 1 0 0 0-1-1H2a1 1 0 0 0-1 1z" />
-                                    </svg>
-                                    <h3 class="h2 mb-4">Machine Vision</h3>
-                                    <p class="mb-4 text-secondary">Our machine vision solutions can help businesses to automate tasks, improve quality control, and make better decisions. This can help businesses to save time and money, and improve their efficiency.</p>
-                                    <a href="#!" class="fw-bold text-decoration-none link-default">
-                                        Learn More
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right-short" viewBox="0 0 16 16">
-                                            <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z" />
-                                        </svg>
-                                    </a>
-                                </div>
+                <div class="col-lg-8" data-aos="fade-up" data-aos-delay="200">
+
+                    <div class="faq-container">
+                        <div class="faq-item faq-active">
+                            <h3><span class="num">1.</span> <span>Non consectetur a erat nam at lectus urna duis?</span>
+                            </h3>
+                            <div class="faq-content">
+                                <p>Feugiat pretium nibh ipsum consequat. Tempus iaculis urna id volutpat lacus laoreet non
+                                    curabitur gravida. Venenatis lectus magna fringilla urna porttitor rhoncus dolor purus
+                                    non.</p>
                             </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="card">
-                                <div class="card-body">
-                                    {{-- <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-hdd text-default mb-4" viewBox="0 0 16 16">
-                                        <path d="M4.5 11a.5.5 0 1 0 0-1 .5.5 0 0 0 0 1zM3 10.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0z" />
-                                        <path d="M16 11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V9.51c0-.418.105-.83.305-1.197l2.472-4.531A1.5 1.5 0 0 1 4.094 3h7.812a1.5 1.5 0 0 1 1.317.782l2.472 4.53c.2.368.305.78.305 1.198V11zM3.655 4.26 1.592 8.043C1.724 8.014 1.86 8 2 8h12c.14 0 .276.014.408.042L12.345 4.26a.5.5 0 0 0-.439-.26H4.094a.5.5 0 0 0-.44.26zM1 10v1a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-1a1 1 0 0 0-1-1H2a1 1 0 0 0-1 1z" />
-                                    </svg> --}}
-                                    <h3>Machine Vision</h3>
-                                    <p class="text-secondary">Our machine vision solutions can help businesses to automate tasks, improve quality control, and make better decisions. This can help businesses to save time and money, and improve their efficiency.</p>
-                                    <a href="#!" class="fw-bold text-decoration-none link-default">
-                                        Learn More
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right-short" viewBox="0 0 16 16">
-                                            <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z" />
-                                        </svg>
-                                    </a>
-                                </div>
+                            <i class="faq-toggle bi bi-chevron-right"></i>
+                        </div><!-- End Faq item-->
+
+                        <div class="faq-item">
+                            <h3><span class="num">2.</span> <span>Feugiat scelerisque varius morbi enim nunc faucibus a
+                                    pellentesque?</span></h3>
+                            <div class="faq-content">
+                                <p>Dolor sit amet consectetur adipiscing elit pellentesque habitant morbi. Id interdum velit
+                                    laoreet id donec ultrices. Fringilla phasellus faucibus scelerisque eleifend donec
+                                    pretium. Est pellentesque elit ullamcorper dignissim. Mauris ultrices eros in cursus
+                                    turpis massa tincidunt dui.</p>
                             </div>
+                            <i class="faq-toggle bi bi-chevron-right"></i>
+                        </div><!-- End Faq item-->
+
+                        <div class="faq-item">
+                            <h3><span class="num">3.</span> <span>Dolor sit amet consectetur adipiscing elit
+                                    pellentesque?</span></h3>
+                            <div class="faq-content">
+                                <p>Eleifend mi in nulla posuere sollicitudin aliquam ultrices sagittis orci. Faucibus
+                                    pulvinar elementum integer enim. Sem nulla pharetra diam sit amet nisl suscipit. Rutrum
+                                    tellus pellentesque eu tincidunt. Lectus urna duis convallis convallis tellus. Urna
+                                    molestie at elementum eu facilisis sed odio morbi quis</p>
+                            </div>
+                            <i class="faq-toggle bi bi-chevron-right"></i>
+                        </div><!-- End Faq item-->
+
+                        <div class="faq-item">
+                            <h3><span class="num">4.</span> <span>Ac odio tempor orci dapibus. Aliquam eleifend mi in
+                                    nulla?</span></h3>
+                            <div class="faq-content">
+                                <p>Dolor sit amet consectetur adipiscing elit pellentesque habitant morbi. Id interdum velit
+                                    laoreet id donec ultrices. Fringilla phasellus faucibus scelerisque eleifend donec
+                                    pretium. Est pellentesque elit ullamcorper dignissim. Mauris ultrices eros in cursus
+                                    turpis massa tincidunt dui.</p>
+                            </div>
+                            <i class="faq-toggle bi bi-chevron-right"></i>
+                        </div><!-- End Faq item-->
+
+                        <div class="faq-item">
+                            <h3><span class="num">5.</span> <span>Tempus quam pellentesque nec nam aliquam sem et tortor
+                                    consequat?</span></h3>
+                            <div class="faq-content">
+                                <p>Molestie a iaculis at erat pellentesque adipiscing commodo. Dignissim suspendisse in est
+                                    ante in. Nunc vel risus commodo viverra maecenas accumsan. Sit amet nisl suscipit
+                                    adipiscing bibendum est. Purus gravida quis blandit turpis cursus in</p>
+                            </div>
+                            <i class="faq-toggle bi bi-chevron-right"></i>
+                        </div><!-- End Faq item-->
+
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+    </section><!-- /Faq Section -->
+
+    <!-- Recent Posts Section -->
+    <section id="recent-posts" class="recent-posts section">
+
+        <!-- Section Title -->
+        <div class="container section-title" data-aos="fade-up">
+            <h2>Recent Blog Posts</h2>
+            <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
+        </div><!-- End Section Title -->
+
+        <div class="container">
+
+            <div class="row gy-4">
+
+                <div class="col-xl-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                    <article>
+
+                        <div class="post-img">
+                            <img src="assets/img/blog/blog-1.jpg" alt="" class="img-fluid">
                         </div>
-                        <div class="col-12 col-md-4">
-                            <div class="card bg-transparent border-default rounded-0">
-                                <div class="card-body">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-hdd text-default mb-4" viewBox="0 0 16 16">
-                                        <path d="M4.5 11a.5.5 0 1 0 0-1 .5.5 0 0 0 0 1zM3 10.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0z" />
-                                        <path d="M16 11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V9.51c0-.418.105-.83.305-1.197l2.472-4.531A1.5 1.5 0 0 1 4.094 3h7.812a1.5 1.5 0 0 1 1.317.782l2.472 4.53c.2.368.305.78.305 1.198V11zM3.655 4.26 1.592 8.043C1.724 8.014 1.86 8 2 8h12c.14 0 .276.014.408.042L12.345 4.26a.5.5 0 0 0-.439-.26H4.094a.5.5 0 0 0-.44.26zM1 10v1a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-1a1 1 0 0 0-1-1H2a1 1 0 0 0-1 1z" />
-                                    </svg>
-                                    <h3 class="h2 mb-4">Machine Vision</h3>
-                                    <p class="mb-4 text-secondary">Our machine vision solutions can help businesses to automate tasks, improve quality control, and make better decisions. This can help businesses to save time and money, and improve their efficiency.</p>
-                                    <a href="#!" class="fw-bold text-decoration-none link-default">
-                                        Learn More
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right-short" viewBox="0 0 16 16">
-                                            <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z" />
-                                        </svg>
-                                    </a>
-                                </div>
+
+                        <p class="post-category">Politics</p>
+
+                        <h2 class="title">
+                            <a href="blog-details.html">Dolorum optio tempore voluptas dignissimos</a>
+                        </h2>
+
+                        <div class="d-flex align-items-center">
+                            <img src="assets/img/blog/blog-author.jpg" alt=""
+                                class="img-fluid post-author-img flex-shrink-0">
+                            <div class="post-meta">
+                                <p class="post-author">Maria Doe</p>
+                                <p class="post-date">
+                                    <time datetime="2022-01-01">Jan 1, 2022</time>
+                                </p>
                             </div>
                         </div>
 
-                    </div>
-                </div>
-            </section>
+                    </article>
+                </div><!-- End post list item -->
+
+                <div class="col-xl-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                    <article>
+
+                        <div class="post-img">
+                            <img src="assets/img/blog/blog-2.jpg" alt="" class="img-fluid">
+                        </div>
+
+                        <p class="post-category">Sports</p>
+
+                        <h2 class="title">
+                            <a href="blog-details.html">Nisi magni odit consequatur autem nulla dolorem</a>
+                        </h2>
+
+                        <div class="d-flex align-items-center">
+                            <img src="assets/img/blog/blog-author-2.jpg" alt=""
+                                class="img-fluid post-author-img flex-shrink-0">
+                            <div class="post-meta">
+                                <p class="post-author">Allisa Mayer</p>
+                                <p class="post-date">
+                                    <time datetime="2022-01-01">Jun 5, 2022</time>
+                                </p>
+                            </div>
+                        </div>
+
+                    </article>
+                </div><!-- End post list item -->
+
+                <div class="col-xl-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                    <article>
+
+                        <div class="post-img">
+                            <img src="assets/img/blog/blog-3.jpg" alt="" class="img-fluid">
+                        </div>
+
+                        <p class="post-category">Entertainment</p>
+
+                        <h2 class="title">
+                            <a href="blog-details.html">Possimus soluta ut id suscipit ea ut in quo quia et soluta</a>
+                        </h2>
+
+                        <div class="d-flex align-items-center">
+                            <img src="assets/img/blog/blog-author-3.jpg" alt=""
+                                class="img-fluid post-author-img flex-shrink-0">
+                            <div class="post-meta">
+                                <p class="post-author">Mark Dower</p>
+                                <p class="post-date">
+                                    <time datetime="2022-01-01">Jun 22, 2022</time>
+                                </p>
+                            </div>
+                        </div>
+
+                    </article>
+                </div><!-- End post list item -->
+
+            </div><!-- End recent posts list -->
+
         </div>
-    @endsection
+
+    </section><!-- /Recent Posts Section -->
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact section">
+
+        <!-- Section Title -->
+        <div class="container section-title" data-aos="fade-up">
+            <h2>Contact</h2>
+            <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
+        </div><!-- End Section Title -->
+
+        <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+            <div class="row gx-lg-0 gy-4">
+
+                <div class="col-lg-4">
+                    <div class="info-container d-flex flex-column align-items-center justify-content-center">
+                        <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="200">
+                            <i class="bi bi-geo-alt flex-shrink-0"></i>
+                            <div>
+                                <h3>Address</h3>
+                                <p>A108 Adam Street, New York, NY 535022</p>
+                            </div>
+                        </div><!-- End Info Item -->
+
+                        <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="300">
+                            <i class="bi bi-telephone flex-shrink-0"></i>
+                            <div>
+                                <h3>Call Us</h3>
+                                <p>+1 5589 55488 55</p>
+                            </div>
+                        </div><!-- End Info Item -->
+
+                        <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="400">
+                            <i class="bi bi-envelope flex-shrink-0"></i>
+                            <div>
+                                <h3>Email Us</h3>
+                                <p>info@example.com</p>
+                            </div>
+                        </div><!-- End Info Item -->
+
+                        <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="500">
+                            <i class="bi bi-clock flex-shrink-0"></i>
+                            <div>
+                                <h3>Open Hours:</h3>
+                                <p>Mon-Sat: 11AM - 23PM</p>
+                            </div>
+                        </div><!-- End Info Item -->
+
+                    </div>
+
+                </div>
+
+                <div class="col-lg-8">
+                    <form action="" method="post" class="php-email-form" data-aos="fade" data-aos-delay="100">
+                        <div class="row gy-4">
+
+                            <div class="col-md-6">
+                                <input type="text" name="name" class="form-control" placeholder="Your Name"
+                                    required="">
+                            </div>
+
+                            <div class="col-md-6 ">
+                                <input type="email" class="form-control" name="email" placeholder="Your Email"
+                                    required="">
+                            </div>
+
+                            <div class="col-md-12">
+                                <input type="text" class="form-control" name="subject" placeholder="Subject"
+                                    required="">
+                            </div>
+
+                            <div class="col-md-12">
+                                <textarea class="form-control" name="message" rows="8" placeholder="Message" required=""></textarea>
+                            </div>
+
+                            <div class="col-md-12 text-center">
+                                <div class="loading">Loading</div>
+                                <div class="error-message"></div>
+                                <div class="sent-message">Your message has been sent. Thank you!</div>
+
+                                <button type="submit">Send Message</button>
+                            </div>
+
+                        </div>
+                    </form>
+                </div><!-- End Contact Form -->
+
+            </div>
+
+        </div>
+
+    </section><!-- /Contact Section -->
+@endsection
