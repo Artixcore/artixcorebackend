@@ -2,7 +2,7 @@
 @section('style_css')
 @endsection
 @section('title')
-    <title>Welcome to Artixcore</title>
+    Welcome to Artixcore
 @endsection
 
 

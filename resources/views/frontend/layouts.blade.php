@@ -7,9 +7,9 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <title>@yield('title')</title>
     @yield('meta')
-    {{-- <title>Document</title> --}}
-    @yield('title')
 
     <link rel="icon" type="image/x-icon" href="{{ asset('icon.png') }}">
 
@@ -105,9 +105,8 @@
                     <ul class="list-unstyled list-sm-space fs-sm mb-0">
                         <li><a class="link-dark" href="https://etherscan.io/contactusadvertise?type=137">Advertise <i
                                     class="far fa-arrow-up-right-from-square text-muted ms-1"></i></a></li>
-                        <li><a class="link-dark" href="https://etherscan.io/eaas"
-                                target="_blank">Explorer-as-a-Service (EaaS) <i
-                                    class="far fa-arrow-up-right-from-square text-muted ms-1"></i></a></li>
+                        <li><a class="link-dark" href="https://etherscan.io/eaas" target="_blank">Explorer-as-a-Service
+                                (EaaS) <i class="far fa-arrow-up-right-from-square text-muted ms-1"></i></a></li>
                         <li><a class="link-dark" href="apis.html">API Plans</a></li>
                         <li><a class="link-dark" href="priority-support.html">Priority Support</a></li>
                         <li><a class="link-dark" href="https://blockscan.com/" target="_blank">Blockscan <i
@@ -160,14 +159,6 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.3/jquery-ui.min.js"
         integrity="sha512-Ww1y9OuQ2kehgVWSD/3nhgfrb424O3802QYP/A5gPXoM4+rRjiKrjHdGxQKrMGQykmsJ/86oGdHszfcVgUr4hA=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
-    </script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js"
-        integrity="sha512-7Pi/otdlbbCR+LnW+F7PwFcSDJOuUJB3OxtEHbg4vSMvzvJjde4Po1v4BR9Gdc9aXNUNFVUY+SK51wWT8WF0Gg=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="{{ asset('src/vendor/aos/aos.js') }}"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/glightbox/3.3.0/js/glightbox.min.js"

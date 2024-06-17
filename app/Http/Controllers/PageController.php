@@ -10,12 +10,12 @@ class PageController extends Controller
     public function index()
     {
         $pages = Page::all();
-        return view('pages.index', compact('pages'));
+        return view('admin.pages.index', compact('pages'));
     }
 
     public function create()
     {
-        return view('pages.create');
+        return view('admin.pages.create');
     }
 
     public function store(Request $request)
@@ -33,7 +33,7 @@ class PageController extends Controller
 
     public function edit(Page $page)
     {
-        return view('pages.edit', compact('page'));
+        return view('admin.pages.edit', compact('page'));
     }
 
     public function update(Request $request, Page $page)

@@ -46,6 +46,7 @@
         <!-- page-body-wrapper ends -->
     </div>
     @include('admin.header.js')
+    @yield('scripts')
 </body>
 
 </html>
