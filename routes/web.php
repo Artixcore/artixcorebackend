@@ -2,7 +2,9 @@
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\FaqController;
 use App\Http\Controllers\PageController;
+use App\Http\Controllers\BlogController;
 use App\Http\Controllers\MenuController;
 use App\Http\Controllers\UploadController;
 use App\Http\Controllers\SettingController;
@@ -14,7 +16,6 @@ use App\Http\Controllers\IndexHeaderController;
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\FrontendMenuController;
 use App\Http\Controllers\FrontendPageController;
-use App\Http\Controllers\FaqController;
 
 
 /*
@@ -32,7 +33,9 @@ use App\Http\Controllers\FaqController;
 
 
 
-Route::get('/', function () {    return view('frontend.index');});
+Route::get('/', function () {
+    return view('frontend.index');
+});
 
 
 // Route to show pages by slug
@@ -43,12 +46,9 @@ Route::fallback(function () {
     return view('404');
 });
 
-
-
-
-Route::get('/header', [FrontendMenuController::class, 'showHeaderMenu']);
-
 Auth::routes();
+
+Route::resource('blogs', BlogController::class);
 
 Route::resource('faqs', FaqController::class);
 
@@ -58,7 +58,7 @@ Route::resource('testimonials', TestimonialController::class);
 
 Route::resource('services', ServiceController::class);
 
-Route::get('admins', [AdminController::class,'index'])->name('admins');
+Route::get('admins', [AdminController::class, 'index'])->name('admins');
 
 Route::resource('uploads', UploadController::class);
 
@@ -73,4 +73,3 @@ Route::resource('index_headers', IndexHeaderController::class);
 Route::resource('pages', PageController::class)->except(['destroy']);
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
