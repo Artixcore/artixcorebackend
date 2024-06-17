@@ -8,7 +8,6 @@
 
 @section('content')
     <!-- Hero Section -->
-    <!-- Hero Section -->
     @include('frontend.Home.Header')
 
     {{-- @include('frontend.Home.Client') --}}
