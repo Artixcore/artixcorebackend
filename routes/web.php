@@ -14,9 +14,8 @@ use Illuminate\Support\Facades\Auth;
 |
 */
 
-Route::get('/', function () {
-    return view('frontend.index');
-});
+Route::get('/', function () {    return view('frontend.index');});
+Route::get('/admins', function () {    return view('admin.dashboard.index');});
 
 Auth::routes();
 
