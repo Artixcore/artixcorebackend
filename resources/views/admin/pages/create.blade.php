@@ -34,10 +34,10 @@
 @section('scripts')
     <!-- Place the first <script>
         tag in your HTML 's <head> --> <
-            <script src =
+            {{-- <script src =
             "https://cdn.tiny.cloud/1/n3n388cua6dfc5slssd9e6q6cofyawvtozbwd2n88esexqfl/tinymce/7/tinymce.min.js"
         referrerpolicy = "origin" >
-    </script>
+    </script> --}}
 
     <!-- Place the following <script>
         and < textarea > tags your HTML 's <body> --> <

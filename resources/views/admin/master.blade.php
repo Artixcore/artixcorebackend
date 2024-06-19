@@ -51,6 +51,8 @@
         </div>
         <!-- page-body-wrapper ends -->
     </div>
+    <script src="https://cdn.tiny.cloud/1/n3n388cua6dfc5slssd9e6q6cofyawvtozbwd2n88esexqfl/tinymce/7/tinymce.min.js"
+        referrerpolicy="origin"></script>
     @include('admin.header.js')
     @yield('scripts')
 </body>

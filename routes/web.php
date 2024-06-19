@@ -8,6 +8,7 @@ use App\Http\Controllers\BlogController;
 use App\Http\Controllers\MenuController;
 use App\Http\Controllers\UploadController;
 use App\Http\Controllers\SettingController;
+use App\Http\Controllers\ContactController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\PortfolioController;
 use App\Http\Controllers\SocialLinkController;
@@ -30,13 +31,7 @@ use App\Http\Controllers\FrontendPageController;
 */
 // routes/web.php
 
-
-
-
-Route::get('/', function () {
-    return view('frontend.index');
-});
-
+Route::get('/', function () { return view('frontend.index');});
 
 // Route to show pages by slug
 Route::get('menu/{slug}', [FrontendPageController::class, 'show'])->name('frontend.pages.show');
@@ -45,8 +40,18 @@ Route::get('menu/{slug}', [FrontendPageController::class, 'show'])->name('fronte
 Route::fallback(function () {
     return view('404');
 });
+Route::get('/contact', [ContactController::class, 'showForm'])->name('contact.form');
+Route::post('/contact', [ContactController::class, 'store'])->name('contact.store');
 
 Auth::routes();
+
+// Contact form routes
+
+// Admin routes for managing contacts
+Route::middleware(['auth'])->group(function () {
+    Route::get('/admin/contacts', [ContactController::class, 'index'])->name('admin.contacts.index');
+    Route::get('/admin/contacts/{contact}', [ContactController::class, 'show'])->name('admin.contacts.show');
+});
 
 Route::resource('blogs', BlogController::class);
 

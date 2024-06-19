@@ -20,7 +20,7 @@
                     @foreach ($menus as $menu)
                         <li class="nav-item dropdown position-initial">
                             <a href="javascript:;" id="LI_{{ $menu->id }}" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                {{ $menu->title }} <i class="fa-solid fa-angle-down"></i>
+                                {{ $menu->title }}
                             </a>
                             @if ($menu->children->count())
                                 <div class="dropdown-menu dropdown-menu-border dropdown-menu-mega">
