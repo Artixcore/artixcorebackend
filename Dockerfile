@@ -35,8 +35,9 @@ COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 # Copy existing application directory contents
 COPY . /var/www/html
 
-# Copy existing application directory permissions
-COPY --chown=www-data:www-data . /var/www/html
+# Set permissions and ownership
+RUN chown -R www-data:www-data /var/www/html
+RUN chmod -R 775 /var/www/html
 
 # Change current user to www
 USER www-data
