@@ -11,16 +11,16 @@ services:
     environment:
       - APP_NAME=Laravel
       - APP_ENV=local
-      - APP_KEY=base64:bR0xQWmXd44rEu+DbJely9z7q6vwn76lL07KhzFlXOc=
+      - APP_KEY=base64:W1bRqWV4Uln6wJzA7s9f3ySwAGDJVHTv9sD/qDckU7Q=
       - APP_DEBUG=true
       - APP_URL=http://localhost
       - LOG_CHANNEL=stack
       - DB_CONNECTION=mysql
       - DB_HOST=db
       - DB_PORT=3306
-      - DB_DATABASE=artixcore
+      - DB_DATABASE=laravel
       - DB_USERNAME=root
-      - DB_PASSWORD=S23718ihskdjrfh8kd**
+      - DB_PASSWORD=root
       - BROADCAST_DRIVER=log
       - CACHE_DRIVER=file
       - QUEUE_CONNECTION=sync
@@ -57,10 +57,10 @@ services:
     container_name: mysql
     restart: unless-stopped
     environment:
-      MYSQL_DATABASE: artixcore
+      MYSQL_DATABASE: laravel
       MYSQL_ROOT_PASSWORD: root
-      MYSQL_USER: S23718ihskdjrfh8kd**
-      MYSQL_PASSWORD: S23718ihskdjrfh8kd**
+      MYSQL_USER: laravel
+      MYSQL_PASSWORD: laravel
     volumes:
       - dbdata:/var/lib/mysql
     ports:
